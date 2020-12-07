@@ -1,0 +1,197 @@
+<DO it 총정리>
+[HTML]
+
+1.Hyper Text Markup Language
+ 하이퍼텍스트 : 웹에서 링크를 클릭해 다른 문서나 사이트로 이동하는 기능
+ 마크업 : 태그를 사용해 문서에서 어느부분이 제목인지 본문인지 사진인지
+           등을 표시하는것
+ 웹문서 : 확장자가 html으로 내용을 확인하는 프로그램
+ 웹브라우저 : 웹문서를 보는 프로그램
+ 웹 편집기 : 웹문서를 작성하는 프로그램
+ 
+
+2.웹표준 : 웹사이트를 제작시 지켜야하는 약속들(HTML5)
+          ->장소나 브라우저에 상관없이 쉽게 볼 수 있고 어느 기기에서나
+             볼 수 있고 개발자나 디자이너 들이 시간을 절약할 수 있다. 
+
+
+3.HTML5, CSS3를 공부해야하는 이유
+->최신 웹 표준에 맞는 웹 사이트를 제작할 수 있다
+->앱 화면을 디자인 하기 위한 기초
+ ->소스를 이해해 웹 사이트와 블로그를 수정하기 쉽다
+
+
+4.문서기본구조
+<!DOCTYPE html> : 현재문서가 HTML5 언어로 작성된 웹문서라는 뜻
+<html> ~ </html : 웹문서의 시작과 끝을 나타내는 태그
+<head> ~ <head> : 웹 브라우저가 웹 문서를 해석하기 위해 필요한
+		  정보들을 입력하는 부분 (스타일, 스크립트 등)
+<body> ~ <body> : 실제로 웹 브라우저 화면에 나타날 내용
+
++ <meta> : 웹 문서와 관련된 정보들을 지정 (head에 들어감)
+     -문자 세트 지정
+       <meta charset="UTF-8">
+     -모바일 기기 고려
+       <meta name = viewport" content ="width=device-width, initial-scale=1.0"> 
+     -익스플로러 고려
+       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     -검색 엔진 고려
+       <meta name = "keywords" content="html5, 웹표준">
+       <meta name = "description" content ="html5를 통해 웹 표준 공부하기">
+       <meta name = "author" content = "Sanghoon Ko>
+
+
+5.텍스트 관련 태그
+  -텍스트를 덩어리로 묶어주는 태그
+    <h1>~<h6> : <h1>큰제목 ~ <h6> 가장작은 제목
+    <p> : 단락(문단)
+    <br> : 줄바꾸기
+    <hr> : 수평줄
+    <blockquote> : 인용문 넣기(발취한 url주소 등) 
+    <pre> : 입력하는 그대로 화면에 표시
+ -텍스트를 한줄로 표시하는 태그
+    <strong>, <b> : 굵게 표시하기
+    <em>, <i> : 이탤릭체(l기울임꼴)로 표시
+    <q> : 인용내용 표시하기
+    <mark> : 형광펜효과
+    <span> : 줄바꿈 없이 영역 묶기
+  -목록을 만드는 태그
+    <ul>,<li> 순서없는 목록
+    <ol>,<li> 순서 있는 목록 (type 속성 사용 가능 ex) type ="a" or type="1" 등
+    <dl><dt><dd> 설명 목록
+ -직접해보는 예제실습
+ -표를 만드는 태그 
+    <table>, <tr>, <td>, <th> : 기본적인 표 만들기
+    <tr> : 행
+    <td> : 열
+    <th> : 행제목(잘안씀) - 자동으로 진하게효과 들어감
+    colspan, rowspan속성 : 행또는 열 합치기
+    rowspan : 행 합치기  ex) <td colspan="3">
+    colspan : 열 합치기   ex) <td rowspan="3">
+ -표에 제목 붙이기
+    <caption> : <table>태그안에 <table>바로 다음에(아래에) 사용
+    <figcaption> : <table>태그밖에 사용하고 밖에 닫음 (table태그를 감싼다)
+ -표 구조 정의
+    <thead>, <tbody>, <tfoot>
+    <thead> : 표의 제목 (가장 윗줄)
+    <tbody> : 표의 본문 (가장 윗줄, 가장아랫줄 제외한 모든부분)
+    <tfoot> : 표의 요약 (가장 아래줄)
+ 
+
+
+6.이미지와 하이퍼링크
+ -이미지
+  이미지형식 : GIF, JPG/JPEG, PNG 
+ -<img>태그 이미지 삽입하기
+    <img src = "./img/cover.jpg" alt="빠른연산">
+     src : 이미지 파일 경로 지정
+     alt : 대체텍스트
+ -이미지파일 다운 or 웹 상의 링크를 복사하여 이미지 경로 지정 가능
+ -width, height 속성으로 이미지 크기 조정 가능
+    width : 넓이(가로)
+    height : 높이(세로)
+       -> 혹은 그림판으로도 원본 사이즈 조절 가능
+ -<figure>, <figcaption> 으로 설명글을 붙일 대상 지정
+    ex) <figure>
+	<img src ="./coffie.jpg" alt ="커피">
+	<figcaption>커피 마시는 사람들의 모습</figcaption>
+         <figure>
+ -링크만들기
+    <a href ="링크주소"><img src ="./coffie.jpg" alt ="커피"></a>
+      ->이렇게 할시에 이미지 눌렀을떄 해당 링크로 이동
+      ->target속성 
+         _blank : 새창에서 열림
+         _self : 해당 창에서 열림
+         ex)<a href ="./coffe.jpg" target = "_blank">
+             <a href ="./coffe.jpg" target = "_self">
+ -한페이지 안에서 점프하는 앵커 만들기
+   ->스크롤을 많이 내려야하는 그런 긴 웹페이지에서 해당 버튼이나 글을 클릭하면
+      해당버튼이나 글에 연결되어있는 부분으로 바로 내려가거나 올라오는 것
+   ->태그에 id값을 넣어주고 연결시킬 부분에서 #id값 으로 링크를 걸어주면 된다
+       ex)       <p id ="information">정보</p>
+       	     <p id = "price">가격</p>
+       	     <p id = "hoo">후기</p>
+                  
+                  <p><a href ="#price">[가격으로 이동]</p>
+ -<map>, <area>, usemap속성 - 이미지 맵 지정하기 ->>생략
+ -SVG이미지 -로고나 아이콘에 사용되는 고퀄리티 이미지 ->>생략
+  
+
+
+7.폼 관련 태그들
+ -<form>태그 - 폼만들기
+   <form> : 사용자가 입력한 자료들을 서버로 어떤 방식으로 넘길것인지,
+                서버에서 어떤 프로그램을 이용해 처리할것인지 지정
+  속성
+   ->method : 사용자가 입력한 내용들을 서버쪽 프로그램으로 어떻게 넘겨줄지 지정
+       get : 주소 표시줄에 사용자가 입력한 내용이 그대로 드러남
+       post : 대부분 이방식을 사용! 사용자의 표준 입력으로 넘겨주기 때문에 길이에 제한이 없고
+               입력한내용이 드러나지 않는다
+   ->name : 폼의 이름지정
+   ->action : <form> 안의 내용들을 처리해줄 서버상의 프로그램을 지정
+   ->autocomlete  : 입력시 자동완성기능(네이버,구글 검색창처럼)
+ -<label>태그 - 폼 요소에 레이블 붙이기
+    <label> : 폼 옆의 이름  ex) 아이디 : [       ]   의 아이디
+      ex) <label for ="user-id">아이디</label>
+            <input type="text id = "user-id> 
+       위처럼 아이디가 같아야함(같이 감싸는거 x)
+       <label> 적용시 해당 텍스트를 클릭해도 클릭이됨!!!! (적용안할시 해당 체크박스나 그것만 됨)
+      <fieldset> : 폼요소를 그룹으로 묶음(외곽선이 생김 테두리)
+ -<input>태그 : 아이디나 비번, 검색 등을 하는 박스(사용자에게 입력받는곳)
+   속성
+    ->hidden : 화면에 보이진 않지만 서버에는 전송됨(관리자가 알아야할 내용기입)
+    ->text : 한줄짜리 일반 텍스트를 입력하는 필드
+    ->password : 비밀번호 입력란으로 해당 숫자가 보이지 않음
+    ->search : 검색상자
+    ->url : 주소입력란
+    ->email : 이메일 입력란
+    ->tel : 전화번호 입력란
+    ->number : 숫자 입력란
+    ->range : 위아래 버튼으로 숫자 올렸다 내렸다 설정하는 란
+    ->radio : 한개만 선택할시 사용 (동그란 부분 클릭)
+    ->checkbox : 여러개 중복으로 선택해야할때 사용(네모난부분 클릭)
+       (value 는 필수속성으로 서버에 알려줄떄 넘길값을 적는것 ex) 문법, 회화 등의 카테고리
+    ->color : 색상을 선택하게 하는 상자
+    ->date : 날짜 (달력이 뜸)
+    ->month : 월과 년도 ( // )
+    ->week : 주와 년도 ( // )
+    ->time : 시간
+    ->datetime : 
+    ->datetime-local : 
+    ->submit : 서버 전송 버튼 (입력한 정보를 서버로 전송)
+    ->reset : 리셋버튼 (입력했던것 지우는것)
+    ->image : 이미지 버튼
+    ->file : 파일 첨부
+ -input 태그의 다양한 속성
+  ->autofocus : 페이지불러오자마자 커서가 들어가서 바로 입력가능
+  ->placeholder : 힌트입력(입력란에 연한글씨로 아이디 입력하세요 등)
+  ->readonly : 읽기전용 필드 만들기(수정불가)
+  ->required : 필수 필드 지정하기 (필수 필드 지정안할시 다음단계 진행 x)
+ -여러 데이터 나열해 보여주기
+   <select>, <optgroup>, <option> - 드롭다운 만들기
+    -><select>와 <option>으로 드롭다운을 만든다
+     ->select의 속성
+          multiple : 여러개 중복 선택 가능
+          size : 드롭다운 메뉴 개수 선택
+     ->option의 속성
+          value : 서버로 넘겨질값 지정
+          selected : 기본으로 선택되어있게 하는거
+     ->optgroub : 드롭다운 목록을 그룹으로 묶는거
+            ex)<select size="5" id="class" multiple>
+                    <optgroub label ="공과대학"> 
+		<option value="archi">건축공학과</option>
+		<option value="mechanic">기계공학과</option>
+		<option value="indust">산업공학과</option>
+	          </optgroub> 
+	    </select>
+ -<textarea> 태그 - 여러 줄 입력하는 텍스트 영역 만들기
+   ->여러줄의 텍스트를 입력하는 영역
+   ->드레그 가능	
+
+
+
+
+
+
+
+

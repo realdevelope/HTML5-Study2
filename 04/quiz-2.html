@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>프런트엔드 개발자 지원서</title>
+	<style>
+		#container {
+			width: 520px;
+			border: 1px solid black;
+			padding: 20px 40px;
+			margin: 0 auto;
+		}
+
+		fieldset {
+			margin-bottom: 15px;
+		}
+
+		legend {
+			font-weight: bold;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		li {
+			line-height: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<h1>프런트엔드 개발자 지원서 </h1>
+		<p>HTML, CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+		<hr>
+		<form>
+			<h2>개인정보</h2>
+			<ul>
+				<li>
+					<label for="k-name">아이디</label>
+					<input type="text" id="k-name" placeholder="공백없이 입력하세요">
+				</li>
+				<li>
+					<label for="k-tell">연락처</label>
+					<input type="tel" id="k-tell">
+				</li>
+			</ul>
+			<h2>지원 분야</h2>
+			<ul>
+				<li>
+					<label for="k-wp"></label>
+					<input type="radio" name="field" value="wp" id="k-wp">웹퍼블리싱
+				</li>
+				<li>
+					<label for="k-wad"></label>
+					<input type="radio" name="field" value="wad" id="k-wad">웹 애플리케이션 개발
+				</li>
+				<li>
+					<label for="k-ide"></label>
+					<input type="radio" name="field" value="ide" id="k-ide">개발 환경 개선
+				</li>
+			</ul>
+			<h2>지원동기</h2>
+			<ul>
+				<li>
+					<textarea rows="5" cols="60" placeholder="본사 지원 동기를 간략히 써 주세요"></textarea>
+				</li>
+				<li>
+					<input type="submit" value="접수하기">
+					<input type="reset" value="다시 쓰기">		<!--이부분 답안이랑 다른데 뭐 상관없겠지?ㅠㅠ-->
+				</li>
+			</ul>
+		</form>
+	</div>
+</body>
+
+</html>
